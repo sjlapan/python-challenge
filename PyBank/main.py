@@ -23,9 +23,14 @@ print(f"Total Months: {len(rows)}")
 
 
 # Calculate net profit change
-for month in rows:
-    net_change += int(month[1])
-print(f"Total: ${net_change}")
+def total_profit(list):
+    net_change = 0
+    for row in list:
+        net_change += int(row[1])
+    print(f"Total: ${net_change}")
+    return net_change
+
+total_profit(rows)
 
 # Get the maximum and minimum profit/losses values
 def max_profit(list):
@@ -44,6 +49,11 @@ def min_profit(list):
     print(f"Greatest Decrease in Profits: {minimum} ")
     return minimum
 
-#
+def avg_profit_change(list):
+    avg_change = (total_profit(list)/len(list)) * 100
+    print(f"Average Change: ${avg_change}")
+
+# Print out summary values
+avg_profit_change(rows)
 max_profit(rows)
 min_profit(rows)
