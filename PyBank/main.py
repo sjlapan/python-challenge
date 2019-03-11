@@ -21,3 +21,8 @@ with open (budget_csv, newline = "") as budget:
 # Check to make sure the headers were stored properly
 print(header)
 print(rows)
+
+# Calculate net profit change
+for month in rows:
+    net_change += int(month[1])
+print(net_change)
