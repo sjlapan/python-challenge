@@ -3,9 +3,10 @@ import os
 
 budget_csv = os.path.join("D:/DU_Bootcamp/code/python-challenge/PyBank", "budget_data.csv")
 
-# Create variables to store the total values 
-total_months = 0
+# Create variable to store the total profit 
+
 net_change = 0
+
 # Create lists for storing column headers and rows
 header = []
 rows = []
@@ -41,6 +42,8 @@ def max_profit(list):
     print(f"Greatest Increase in Profits: {maximum} ")
     return maximum
 
+# @TODO adjust printouts to better match the guide
+
 def min_profit(list):
     minimum = list[0]
     for row in list:
@@ -57,3 +60,5 @@ def avg_profit_change(list):
 avg_profit_change(rows)
 max_profit(rows)
 min_profit(rows)
+
+# @TODO write code to save printout to a text file and export it
