@@ -24,6 +24,8 @@ print(f"Total Months: {len(rows)}")
 
 
 # Calculate net profit change
+
+# @TODO Figure out why total profit is printing its message twice
 def total_profit(list):
     net_change = 0
     for row in list:
