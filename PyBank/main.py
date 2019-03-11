@@ -26,3 +26,18 @@ print(rows)
 for month in rows:
     net_change += int(month[1])
 print(net_change)
+
+# Get the maximum and minimum profit/losses values
+def max_profit(list):
+    maximum = list[0]
+    for row in list:
+        if row[1] > maximum[1]
+            maximum = row
+    print(f"Greatest Increase in Profits: {maximum} ")
+
+def min_profit(list):
+    minimum = list[0]
+    for row in list:
+        if row[1] < minimum[1]
+            minimum = row
+    print(f"Greatest Decrease in Profits: {maximum} ")
