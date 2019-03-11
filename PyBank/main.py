@@ -40,4 +40,4 @@ def min_profit(list):
     for row in list:
         if row[1] < minimum[1]
             minimum = row
-    print(f"Greatest Decrease in Profits: {maximum} ")
+    print(f"Greatest Decrease in Profits: {minimum} ")
