@@ -41,7 +41,7 @@ def max_profit(list):
     for row in list:
         if row[1] > maximum[1]:
             maximum = row
-    print(f"Greatest Increase in Profits: {maximum} ")
+    print(f"Greatest Increase in Profits: {maximum[0]} (${maximum[1]})")
     return maximum
 
 # @TODO adjust printouts to better match the guide
@@ -51,7 +51,7 @@ def min_profit(list):
     for row in list:
         if row[1] < minimum[1]:
             minimum = row
-    print(f"Greatest Decrease in Profits: {minimum} ")
+    print(f"Greatest Decrease in Profits: {minimum[0]} (${minimum[1]})")
     return minimum
 
 def avg_profit_change(list):
