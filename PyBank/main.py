@@ -53,16 +53,24 @@ def min_profit(list):
             minimum = row
     print(f"Greatest Decrease in Profits: {minimum[0]} (${minimum[1]})")
     return minimum
+# Set up the average change function
+change_list = []
 
 def avg_profit_change(list):
-    avg_change = (total_profit(list)/len(list)) * 100
+    for row in list:
+        change_list.append(int((row+1)[1]) - int(row[1]))
+    avg_change = sum(change_list[0])/len(change_list)
     print(f"Average Change: ${round(avg_change, 2)}")
+
+   
+   # avg_change = (total_profit(list)/len(list)) * 100
+   # 
 
 # Print out summary values
 avg_profit_change(rows)
 max_profit(rows)
 min_profit(rows)
 
-# One more time
+
 
 # @TODO write code to save printout to a text file and export it
