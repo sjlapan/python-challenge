@@ -27,8 +27,8 @@ with open (budget_csv, newline = "") as budget:
     min_change = min(profit_loss_change)
     max_change = max(profit_loss_change)
     #store the dates for the max and min in the dates list using index of max and min
-    max_date = str(date[profit_loss_change.index(max(profit_loss_change))])
-    min_date = str(date[profit_loss_change.index(min(profit_loss_change))])
+    max_date = str(date[(profit_loss_change.index(max(profit_loss_change)) + 1)])
+    min_date = str(date[(profit_loss_change.index(min(profit_loss_change)) + 1)])
     print(f"Average Change: ${round(avg_change, 2)}")
     print(f"Greatest Increase in Profits: {max_date} (${int(max_change)})")
     print(f"Greatest Decrease in Profits: {min_date} (${int(min_change)})")
