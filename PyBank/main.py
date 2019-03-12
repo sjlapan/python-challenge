@@ -63,4 +63,6 @@ avg_profit_change(rows)
 max_profit(rows)
 min_profit(rows)
 
+# new stuff
+
 # @TODO write code to save printout to a text file and export it
