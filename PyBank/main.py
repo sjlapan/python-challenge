@@ -33,7 +33,7 @@ def total_profit(list):
     print(f"Total: ${net_change}")
     return net_change
 
-total_profit(rows)
+
 
 # Get the maximum and minimum profit/losses values
 def max_profit(list):
@@ -56,7 +56,7 @@ def min_profit(list):
 
 def avg_profit_change(list):
     avg_change = (total_profit(list)/len(list)) * 100
-    print(f"Average Change: ${avg_change}")
+    print(f"Average Change: ${round(avg_change, 2)}")
 
 # Print out summary values
 avg_profit_change(rows)
