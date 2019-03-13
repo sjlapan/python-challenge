@@ -36,19 +36,16 @@ with open (budget_csv, newline = "") as budget:
 # Specify where to save .txt file
 os.chdir("D:/DU_Bootcamp/code/python-challenge/PyBank")
 
-# Create a list of lines to write to the .txt file
-text_list = []
 
-text_list.append("Financial Analysis")
-text_list.append("------------------------")
-text_list.append(f"Total Months: {len(date)}")
-text_list.append(f"Total: ${int(sum(profit_loss))}")
-text_list.append(f"Average Change: ${round(avg_change, 2)}")
-text_list.append(f"Greatest Increase in Profits: {max_date} (${int(max_change)})")
-text_list.append(f"Greatest Decrease in Profits: {min_date} (${int(min_change)})")
+file = open("budget_summary.txt", "w")
+file.write("Financial Analysis\n")
+file.write("------------------------\n")
+file.write(f"Total Months: {len(date)}\n")
+file.write(f"Total: ${int(sum(profit_loss))}\n")
+file.write(f"Average Change: ${round(avg_change, 2)}\n")
+file.write(f"Greatest Increase in Profits: {max_date} (${int(max_change)})\n")
+file.write(f"Greatest Decrease in Profits: {min_date} (${int(min_change)})")
 
-file = open("budget_summary.txt", "a")
-file.writelines()
 file.close()
 
 
