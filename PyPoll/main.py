@@ -17,11 +17,11 @@ poll_csv = os.path.join("D:/DU_Bootcamp/code/python-challenge/PyPoll", "election
 def vote_counter(candidate_index, vote_list):
     # @TODO Trying to automatically extract values of candidate list
     # to use as variables set to integer values...
-    tally = dict.fromkeys(candidate_index, 0)
+    tally = dict.fromkeys(candidate_index = 0)
     for vote in vote_list:
-        for i in tally:
-            if i == vote:
-                i += 1
+        for key, value in tally.items():
+            if key == vote:
+                value += 1
     print(tally)
 
 
@@ -40,7 +40,7 @@ with open(poll_csv, newline = "") as poll_data:
         total_vote.append(row[2])
         if row[2] not in candidate_list:
             candidate_list.append(row[2])
-            
+    vote_counter(candidate_list, total_vote)        
 
 print(f"There are {len(voter_list)} unique voters.")
 print(f"There are {len(candidate_list)} candidates.")
