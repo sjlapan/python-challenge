@@ -23,13 +23,12 @@ with open(poll_csv, newline = "") as poll_data:
     candidate_list = []
     # Collect all unique candidates and voter IDs
     for row in reader:
+        voter_list.append(row[0])
         if str(row[2]) not in candidate_list:
             candidate_list.append(str(row[2]))
-    for row in reader:
-        if str(row[0]) not in voter_list:
-            voter_list.append(str(row[0]))
+            
 
-print(f"There are {len(voter_list)} unique votes.")
+print(f"There are {len(voter_list)} unique voters.")
 print(f"There are {len(candidate_list)} candidates.")
 print(candidate_list)
-        
+       
