@@ -32,10 +32,11 @@ def vote_counter(candidate_index, vote_list):
     print("----------------------------")
     # Merged my two functions so as to call tally for stats
     for key, value in tally.items():
+        # @TODO format numbers to limit the number of decimal points
        print(f"{key}: {float((value/total) * 100)}% ({value})")
     # Get the winner
-    winner = max(tally, key = tally.get())
-    print(winner)
+    winner = max(tally, key = lambda x: tally.get(x))
+    print(f"Winner: {winner}")
 
 with open(poll_csv, newline = "") as poll_data:
     reader = csv.reader(poll_data, delimiter = ",")
@@ -52,10 +53,6 @@ with open(poll_csv, newline = "") as poll_data:
         if row[2] not in candidate_list:
             candidate_list.append(row[2])
     vote_counter(candidate_list, total_vote)
-    vote_statistics(tally)        
+           
 
-print(f"There are {len(voter_list)} unique voters.")
-print(f"There are {len(candidate_list)} candidates.")
-print(candidate_list)
-print(f"There are {len(total_vote)} votes cast.")
        
