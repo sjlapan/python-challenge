@@ -32,11 +32,21 @@ def vote_counter(candidate_index, vote_list):
     print("----------------------------")
     # Merged my two functions so as to call tally for stats
     for key, value in tally.items():
-        # @TODO format numbers to limit the number of decimal points
-       print(f"{key}: {float((value/total) * 100)}% ({value})")
+       print(f"{key}: {round((value/total) * 100, 3)}% ({value})")
     # Get the winner
     winner = max(tally, key = lambda x: tally.get(x))
     print(f"Winner: {winner}")
+    # print results to .txt file
+    file = open("election_results.txt", "w")
+    file.write("Election Results\n")
+    file.write("----------------------------\n")
+    file.write(f"Total Votes: {total}\n")
+    file.write("----------------------------\n")
+    for key, value in tally.items():
+       file.write(f"{key}: {round((value/total) * 100, 3)}% ({value})\n")
+    file.write(f"Winner: {winner}")
+    file.close()
+    
 
 with open(poll_csv, newline = "") as poll_data:
     reader = csv.reader(poll_data, delimiter = ",")
