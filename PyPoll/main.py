@@ -26,7 +26,19 @@ def vote_counter(candidate_index, vote_list):
                 tally[key] += 1
     print(tally)
 
-
+# Create a function that will spit out summary statistics
+# Maybe transform tally dictionary to a dictionary of lists, turning previous key/value pairs into lists assigned to numbers
+def vote_statistics(results_dict):
+    total = sum(results_dict.values())
+    print("Election Results")
+    print("----------------------------")
+    print(f"Total Votes: {total}")
+    print("----------------------------")
+    for key, value in results_dict.items():
+       print(f"{key}: {float((value/total) * 100)}% ({value})")
+    for key in results_dict:
+        # determine the winner
+        if  
 
 with open(poll_csv, newline = "") as poll_data:
     reader = csv.reader(poll_data, delimiter = ",")
