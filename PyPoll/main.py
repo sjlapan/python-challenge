@@ -25,20 +25,17 @@ def vote_counter(candidate_index, vote_list):
             if key == vote:
                 tally[key] += 1
     print(tally)
-
-# Create a function that will spit out summary statistics
-# Maybe transform tally dictionary to a dictionary of lists, turning previous key/value pairs into lists assigned to numbers
-def vote_statistics(results_dict):
-    total = sum(results_dict.values())
+    total = sum(tally.values())
     print("Election Results")
     print("----------------------------")
     print(f"Total Votes: {total}")
     print("----------------------------")
-    for key, value in results_dict.items():
+    # Merged my two functions so as to call tally for stats
+    for key, value in tally.items():
        print(f"{key}: {float((value/total) * 100)}% ({value})")
-    for key in results_dict:
-        # determine the winner
-        if  
+    # Get the winner
+    winner = max(tally, key = tally.get())
+    print(winner)
 
 with open(poll_csv, newline = "") as poll_data:
     reader = csv.reader(poll_data, delimiter = ",")
@@ -54,7 +51,8 @@ with open(poll_csv, newline = "") as poll_data:
         total_vote.append(row[2])
         if row[2] not in candidate_list:
             candidate_list.append(row[2])
-    vote_counter(candidate_list, total_vote)        
+    vote_counter(candidate_list, total_vote)
+    vote_statistics(tally)        
 
 print(f"There are {len(voter_list)} unique voters.")
 print(f"There are {len(candidate_list)} candidates.")
